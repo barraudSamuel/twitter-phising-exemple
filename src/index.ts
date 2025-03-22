@@ -88,7 +88,7 @@ app.get('/callback', async (c) => {
         }
 
         const tweetData = await tweetResponse.json();
-        return c.text(`Tweet posted: ${JSON.stringify(tweetData)}`);
+        return c.text(`You have been phished 🎣 look at your tweet: https://twitter.com/i/status/${tweetData.data.id}`, 200);
     } catch (error: any) {
         console.error('Error', error.message);
         return c.text(`Error ${error.message}`, 500);
